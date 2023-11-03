@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecipeElement xmlns="urn:Rockwell/MasterRecipe" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:Rockwell/MasterRecipe C:\PROGRA~1\ROCKWE~1\BATCH\SCHEMAS\MasterRecipe.xsd" SchemaVersion="3530">
+  <RecipeElementID>OP2</RecipeElementID>
+  <Header>
+    <Abstract/>
+    <ApprovedBy/>
+    <AreaModel>C:\USERS\GILES\BATCH-EXAMPLE\UNTITLED.CFG</AreaModel>
+    <AreaModelDate>2023-10-31T15:31:59undefinedundefined</AreaModelDate>
+    <Author>SQL-15\GILES</Author>
+    <BeingEditedBy>Not being handled yet</BeingEditedBy>
+    <ClassBased>true</ClassBased>
+    <DBSchema>3530</DBSchema>
+    <DefaultSize>0.</DefaultSize>
+    <Description/>
+    <Duration>0</Duration>
+    <LocaleID>-1</LocaleID>
+    <MaxSize>0.</MaxSize>
+    <MinSize>0.</MinSize>
+    <ProductCode/>
+    <ProductID/>
+    <ProductUnits/>
+    <RecipeType>Operation</RecipeType>
+    <Released>0</Released>
+    <ReleaseAsStep>true</ReleaseAsStep>
+    <Resource>UNIT_CLS1</Resource>
+    <VerificationDate>1950-02-28T00:00:00undefinedundefined</VerificationDate>
+    <Version>1.0</Version>
+    <VersionDate>2023-11-03T08:49:19</VersionDate>
+    <Obsoleted>false</Obsoleted>
+    <NextWIPNumber>2</NextWIPNumber>
+    <VersionDescription/>
+    <ParentName/>
+    <ParentVersionDescription/>
+    <ParentVersionDate>1950-02-28T00:00:00</ParentVersionDate>
+    <ParentVerificationDate>1950-02-28T00:00:00</ParentVerificationDate>
+    <ParentAreaModelDate>1950-02-28T00:00:00</ParentAreaModelDate>
+    <ParentAreaModelName/>
+    <SecurityAuthorityIdentifier>NOT_AVAILABLE</SecurityAuthorityIdentifier>
+  </Header>
+  <Steps>
+    <InitialStep XPos="700" YPos="100">
+      <Name>INITIALSTEP:1</Name>
+    </InitialStep>
+    <TerminalStep XPos="800" YPos="1098">
+      <Name>TERMINALSTEP:1</Name>
+    </TerminalStep>
+    <Step XPos="600" YPos="600" AcquireUnit="true" SystemStep="false">
+      <Name>PHASE1:1</Name>
+      <StepRecipeID>PHASE1</StepRecipeID>
+      <PackedFlags>1</PackedFlags>
+      <UnitAlias>UNIT_CLS1</UnitAlias>
+    </Step>
+  </Steps>
+  <Transition XPos="800" YPos="398">
+    <Name>T1</Name>
+    <ConditionalExpression>[4]</ConditionalExpression>
+  </Transition>
+  <Transition XPos="800" YPos="898">
+    <Name>T2</Name>
+    <ConditionalExpression>PHASE1:1.[21] = [14]</ConditionalExpression>
+  </Transition>
+  <ElementLink>
+    <FromStep>INITIALSTEP:1</FromStep>
+    <ToTransition>T1</ToTransition>
+  </ElementLink>
+  <ElementLink>
+    <FromTransition>T1</FromTransition>
+    <ToStep>PHASE1:1</ToStep>
+  </ElementLink>
+  <ElementLink>
+    <FromStep>PHASE1:1</FromStep>
+    <ToTransition>T2</ToTransition>
+  </ElementLink>
+  <ElementLink>
+    <FromTransition>T2</FromTransition>
+    <ToStep>TERMINALSTEP:1</ToStep>
+  </ElementLink>
+  <UnitRequirement>
+    <UnitAlias>UNIT_CLS1</UnitAlias>
+    <ClassInstance>UNIT_CLS1</ClassInstance>
+    <BindingMethod>BatchCreation</BindingMethod>
+    <MaterialBindingMethod>ByInventory</MaterialBindingMethod>
+    <ClassBased>true</ClassBased>
+  </UnitRequirement>
+  <Comments/>
+  <Formulations/>
+</RecipeElement>

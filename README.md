@@ -1,0 +1,1 @@
+# ftbatch-strip-dates

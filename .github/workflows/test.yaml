@@ -1,0 +1,16 @@
+---
+name: Test
+on: [push]
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: RouxAntoine/checkout@v3.5.4
+      - uses: ./
+        id: test
+        with:
+          folder: '.'
+          regex: ^.+\.(xml)$

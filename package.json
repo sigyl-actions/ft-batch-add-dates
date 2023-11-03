@@ -1,0 +1,38 @@
+{
+  "name": "ft-batch-add-dates",
+  "version": "0.0.1",
+  "description": "format xml files.",
+  "main": "main.js",
+  "scripts": {
+    "lint": "eslint main.js",
+    "package": "ncc build main.js -o dist",
+    "build": "ncc build main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sigyl-actions/ft-batch-add-dates.git"
+  },
+  "keywords": [
+    "actions",
+    "gitea",
+    "release"
+  ],
+  "bugs": {
+    "url": "https://github.com/sigyl-actions/ft-batch-add-dates/issues"
+  },
+  "homepage": "https://github.com/sigyl-actions/ft-batch-add-dates#readme",
+  "author": "SiGyl",
+  "license": "MIT",
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.1"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@xmldom/xmldom": "^0.8.10",
+    "js-yaml": "^4.1.0",
+    "xml-js": "^1.6.11",
+    "xpath": "^0.0.33"
+  }
+}

@@ -1,0 +1,15 @@
+---
+name: xml-schema
+description: >-
+  verify xml files with an xsd schema.
+branding:
+  icon: package
+  color: green
+inputs:
+  folder:
+    description: folder for xml files
+  regex:
+    description: regex to match eg "^.+\.(([xX][mM][lL]))$"
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
